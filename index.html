@@ -58,44 +58,14 @@ button{font-family:inherit;cursor:pointer;}
   .hamburger{display:flex !important;}
 }
 
-/* MOBILE TOPBAR: two-row layout so all actions are visible */
+/* MOBILE TOPBAR: single row, print icon hidden, buttons compact */
 @media(max-width:640px){
-  .topbar{
-    height:auto;
-    flex-wrap:wrap;
-    padding:0 12px;
-    gap:0;
-    align-items:stretch;
-  }
-  .hamburger{
-    align-self:center;
-    margin-right:2px;
-  }
-  .topbar-title{
-    flex:1;
-    padding:11px 8px;
-    border-right:none;
-    margin-right:0;
-    font-size:13px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    align-self:center;
-  }
-  .topbar-spacer{display:none;}
-  .topbar-actions{
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    padding:6px 0 8px;
-    border-top:1px solid var(--border);
-    gap:6px;
-    flex-shrink:0;
-  }
-  .icon-btn{width:28px;height:28px;}
-  .btn-ghost{font-size:10px;letter-spacing:.5px;padding:0 11px;height:28px;}
-  .btn-primary{font-size:10px;letter-spacing:.5px;padding:0 11px;height:28px;}
+  .topbar{padding:0 10px;gap:7px;}
+  .topbar-title{font-size:12.5px;padding-right:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px;}
+  .topbar-spacer{min-width:0;}
+  .icon-btn{display:none;}
+  .btn-ghost{font-size:10px;letter-spacing:.4px;padding:0 10px;height:28px;white-space:nowrap;}
+  .btn-primary{font-size:10px;letter-spacing:.4px;padding:0 10px;height:28px;white-space:nowrap;}
 }
 
 /* MAIN */
