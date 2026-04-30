@@ -1135,41 +1135,9 @@ document.getElementById('archiveModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal('archiveModal');
 });
 
-/* ---- EXPORT DATA (CSV) ---- */
+/* ---- EXPORT DATA: opens master Excel workbook in SharePoint ---- */
 window.exportData = function() {
-  const rows = [
-    ['Cook Medical Workforce Intelligence — Market Scorecard', 'April 2026', '', ''],
-    ['', '', '', ''],
-    ['KPI', 'Bloomington IN', 'Winston-Salem NC', 'Canton / Peoria IL'],
-    ['Unemployment (12-mo avg)', '3.56%', '3.69%', '4.48%'],
-    ['Production workforce depth', '7020', '22950', '14810'],
-    ['Rent affordability gap ($/hr)', '-1.66', '-0.82', '+8.84'],
-    ['Mortgage affordability gap ($/hr)', '-8.31', '-7.98', '+0.80'],
-    ['Production median wage ($/hr)', '21.42', '20.08', '23.57'],
-    ['Assembler median wage ($/hr)', '17.69', '19.08', '22.43'],
-    ['QA/Inspection median wage ($/hr)', '28.95', '21.33', '26.20'],
-    ['Maintenance median wage ($/hr)', '31.20', '28.80', 'N/A'],
-    ['Population trend (10-yr)', '+0.4%', '+7.4%', '-11.5%'],
-    ['Dominant competitor', 'Simtra (Expanding)', 'Reynolds Am. (Wage floor)', 'Caterpillar (UAW wages)'],
-    ['Assembler LQ (natl avg = 1.0)', '3.97', '1.50', '1.92'],
-    ['Active assembler postings (30-day)', '27', '12', '8'],
-    ['Assembler posted range ($/hr)', '$20-28', '$22-24', '$20-42'],
-    ['Median age (workforce)', '32.6', '41.1', '40.7'],
-    ['Geographic mobility', '21.8%', '11.3%', '9.7%'],
-    ['Median home value', '$321400', '$233800', '$107100'],
-    ['Median gross rent ($/mo)', '1200', '1087', '766'],
-    ['Recommended action', 'Stabilize and Retain', 'Expand Selectively', 'Monitor / Preserve'],
-    ['', '', '', ''],
-    ['Source: BLS OEWS May 2024 | ACS 2024 | Indeed postings Feb-Apr 2026', '', '', ''],
-    ['Competitor Research: April 2026', '', '', '']
-  ];
-  const csv = rows.map(r => r.map(c => '"' + String(c).replace(/"/g,'""') + '"').join(',')).join('\n');
-  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'cook_workforce_scorecard_april2026.csv'; a.click();
-  URL.revokeObjectURL(url);
-  showToast('Scorecard exported as CSV');
+  window.open('https://indiana-my.sharepoint.com/:x:/g/personal/robseay_iu_edu/IQBjaatesyNHR6f5MjUl1J70AdAUhsZY-Tv7fOH5r-hCBQU?e=NodDbd','_blank','noopener');
 };
 
 /* ---- TOAST ---- */
